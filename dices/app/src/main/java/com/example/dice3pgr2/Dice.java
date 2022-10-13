@@ -3,10 +3,10 @@ package com.example.dice3pgr2;
 import java.util.ArrayList;
 
 public class Dice {
-    private  int value;
+    private int value;
     private int idImage;
     private boolean isClicked;
-    private ArrayList<Integer> allImage = new ArrayList<>();
+    private final ArrayList<Integer> allImage = new ArrayList<>();
 
     public Dice() {
         imageArray();

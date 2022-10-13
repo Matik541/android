@@ -12,9 +12,24 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public Integer wylosowanaLiczba;
-    private ArrayList<ImageView> dicesView = new ArrayList<ImageView>();
-    private ArrayList<Dice> dices = new ArrayList<Dice>();
+    private final ArrayList<ImageView> dicesView = new ArrayList<>();
+    private final ArrayList<Dice> dices = new ArrayList<>();
+
+    public void rollDice() {
+        if (dices.size() == 0)
+            for (int i = 0; i < dicesView.size(); i++) {
+                Dice dice = new Dice();
+                dices.add(dice);
+                dicesView.get(i).setImageResource(dice.getIdImage());
+            }
+        else
+            for (int i = 0; i < dicesView.size(); i++)
+                if (!dices.get(i).isClicked()) {
+                    Dice dice = new Dice();
+                    dices.set(i, dice);
+                    dicesView.get(i).setImageResource(dice.getIdImage());
+                }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,32 +43,26 @@ public class MainActivity extends AppCompatActivity {
         dicesView.add(findViewById(R.id.imageView4));
         dicesView.add(findViewById(R.id.imageView5));
 
-        diceButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                for (int i = 0; i < dicesView.size(); i++) {
-                    Dice dice = new Dice();
-                    dices.add(dice);
-                    dicesView.get(i).setImageResource(dice.getIdImage());
-                }
-            }
-        });
+        rollDice();
+
+        diceButton.setOnClickListener(v -> rollDice());
 
         for (int i = 0; i < dicesView.size(); i++) {
             int finalI = i;
             dicesView.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "Clicked " + finalI, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Clicked " + finalI + " " + dices.get(finalI).isClicked(), Toast.LENGTH_SHORT).show();
                     if (dices.get(finalI).isClicked()) {
                         dices.get(finalI).setClicked(false);
-                    } else {
+                        dicesView.get(finalI).setImageAlpha(255);
+                    }
+                    else {
                         dices.get(finalI).setClicked(true);
+                        dicesView.get(finalI).setImageAlpha(50);
                     }
                 }
             });
         }
-
-
     }
 }
