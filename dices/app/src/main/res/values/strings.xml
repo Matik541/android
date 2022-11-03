@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Dice3Pgr2</string>
-    <string name="dice">Rzuć</string>
+    <string name="app_name">Dice Poker</string>
+    <string name="dice">Roll</string>
+    <string name="score">"Score: "</string>
 </resources>
