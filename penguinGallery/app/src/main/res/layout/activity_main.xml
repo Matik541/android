@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00796B"
+    android:background="@color/light"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,7 +13,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#004C40"
+        android:background="@color/dark"
         android:text="Galeria"
         android:textColor="#FFFFFF"
         android:textSize="34sp" />
@@ -34,7 +35,7 @@
             android:id="@+id/prev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#004C40"
+            android:backgroundTint="@color/dark"
             android:text="PREV" />
 
         <Button
@@ -48,7 +49,7 @@
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#004C40"
+            android:backgroundTint="@color/dark"
             android:text="NEXT" />
     </LinearLayout>
 
@@ -69,15 +70,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="1"
-            android:inputType="textPersonName" />
+            android:inputType="number"/>
 
     </LinearLayout>
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/bgSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tło niebieski?" />
+        android:text="Tło niebieskie?" />
 
     <TextView
         android:layout_width="match_parent"
@@ -88,7 +89,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#004C40"
+        android:background="@color/dark"
         android:gravity="bottom"
         android:text="Autor: 00000000000" />
 
