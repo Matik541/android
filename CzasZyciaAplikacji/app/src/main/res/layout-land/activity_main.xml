@@ -4,35 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/lightteal"
     android:gravity="center"
-    tools:context=".MainActivity"
-    android:background="@color/lightteal">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="2"
-        app:srcCompat="@drawable/gora"
-        android:onClick="zwieksz"/>
+        android:onClick="zwieksz"
+        app:srcCompat="@drawable/lewo" />
 
     <TextView
         android:id="@+id/licznikTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
         android:layout_gravity="center"
-        android:textSize="64sp"
+        android:text="0"
         android:textColor="@color/gray"
-        />
+        android:textSize="64sp" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="2"
-        app:srcCompat="@drawable/dol"
-        android:onClick="zmiejsz"/>
+        android:onClick="zmiejsz"
+        app:srcCompat="@drawable/prawo" />
 
 </LinearLayout>
